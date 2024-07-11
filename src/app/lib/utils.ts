@@ -1,6 +1,6 @@
 export type Question = {
   question: string;
-  answer: number;
+  answer: string;
   type: string;
 };
 
@@ -15,14 +15,13 @@ export function generateQuestions(amount: number): Question[] {
     const questions = [...Array(amount).keys()].map((_) => {
       const x = random(10);
       const y = random(10);
-      return { question: `${x} + ${y}`, answer: x + y, type: type };
+      return {
+        question: `${x} + ${y}`,
+        answer: (x + y).toString(),
+        type: type,
+      };
     });
     return questions;
-    // const x = random(10);
-    // const y = random(10);
-
-    // const sum = x + y;
-    // return { question: `${x} + ${y}`, answer: sum, type: type };
   }
 
   return [];
