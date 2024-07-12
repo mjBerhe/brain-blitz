@@ -23,5 +23,11 @@ export const Timer: React.FC<{
     autoStart: true,
   });
 
-  return <div>{totalSeconds}</div>;
+  // console.log(isRunning);
+
+  return (
+    <div className="flex">
+      <span className="text-5xl">{totalSeconds}</span>
+    </div>
+  );
 };
